@@ -13,6 +13,22 @@
         .portfolio-item {
             margin-bottom: 30px;
         }
+        #chat-toggle {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 15px;
+        font-size: 18px;
+        border-radius: 5px;
+        bottom: 30px;
+        left: 50%;
+        top: auto;
+        transform: translateX(-50%);
+        box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+        bottom: 10px;
+        transition: bottom 0.3s;
+    }
     </style>
 </head>
 
@@ -202,9 +218,38 @@
             </div>
         </section>
 
+        <!-- Botão para abrir o chat -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chatModal" id="chat-toggle">
+            💬 Chat
+        </button>
+        
+        <!-- Modal do Chat -->
+        <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Chatbot</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="chat-messages" class="border p-2" style="height: 300px; overflow-y: auto;"></div>
+                        <input type="text" id="user-input" class="form-control mt-2" placeholder="Digite sua mensagem..."
+                            onkeypress="if(event.keyCode == 13) sendMessage()">
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-primary btn-sm" onclick="exportChatHistory()">Exportar Chat 📥</button>              </div>
+                </div>
+            </div>
+        </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="chatbot.js"></script>
+
 </body>
 
 </html>
