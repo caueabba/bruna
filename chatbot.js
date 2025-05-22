@@ -85,9 +85,12 @@ document.addEventListener("DOMContentLoaded", function () {
   function getBotResponse(input) {
     input = input.toLowerCase();
 
-    if (input.includes("olá") || input.includes("ola"))
-      return "Olá! Como posso te ajudar?";
-    if (input.includes("oi") || input.includes("oie"))
+    if (
+      input.includes("olá") ||
+      input.includes("ola") ||
+      input.includes("oie") ||
+      input.includes("oi")
+    )
       return "Olá! Como posso te ajudar?";
     if (
       input.includes("orçamento") ||
@@ -100,8 +103,14 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       return "Claro! Digite em poucas palavras o que você precisa. Ou então envie um email com todas as informações para brunafoltran@gmail.com";
     }
-    if (input.includes("contato"))
-      return "Você pode entrar em contato pelo e-mail brunafoltran@gmail.com ou pelo telefone (11) 99999-9999.";
+    if (
+      input.includes("contato") ||
+      input.includes("telefone") ||
+      input.includes("email") ||
+      input.includes("e-mail") ||
+      input.includes("bruna")
+    )
+      return "Você pode entrar em contato pelo e-mail brunafoltran@gmail.com ou pelo Telefone/WhatsApp (11) 99999-9999.";
     if (input.includes("tchau")) return "Até mais! 😊";
     if (input.includes("obrigado"))
       return "Eu que agradeço! Em breve entrarei em contato, até mais! 😊";
