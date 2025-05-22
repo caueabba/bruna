@@ -87,6 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (input.includes("olá") || input.includes("ola"))
       return "Olá! Como posso te ajudar?";
+    if (input.includes("oi") || input.includes("oie"))
+      return "Olá! Como posso te ajudar?";
     if (
       input.includes("orçamento") ||
       input.includes("orcamento") ||
